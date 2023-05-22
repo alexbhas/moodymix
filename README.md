@@ -1,6 +1,8 @@
 # Moodymix
 Moodymix is a web application that allows for users to get song reccomendations based off selecting different emotions.
 
+![Moodymix](https://github.com/alexbhas/moodymix/assets/56275911/092c9429-329f-4e77-aef9-48d5cef59560)
+
 ## How To Run
 - Ensure that ```client = MongoClient('mongodb://localhost:27017/')``` in app.py points to the correct MongoDB server, with the database moodmix and collection songs having been created.
 - Ensure all dependencies are installed for Python with pip install -r requirements.txt
