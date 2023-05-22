@@ -5,6 +5,7 @@ Moodymix is a web application that allows for users to get song reccomendations 
 - Ensure that ```client = MongoClient('mongodb://localhost:27017/')``` in app.py points to the correct MongoDB server, with the database moodmix and collection songs having been created.
 - Ensure all dependencies are installed for Python with pip install -r requirements.txt
 - Ensure all dependencies are installed for Svelte with npm install in /svelte-app
+- Run npm run build in /svelte-app (can also run npm run dev when making changes to just the front-end)
 - Run python app.py, navigate to localhost:8000
 
 ## Tech Stack
