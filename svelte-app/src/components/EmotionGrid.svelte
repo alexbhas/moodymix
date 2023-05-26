@@ -1,9 +1,8 @@
-<!-- src/EmotionGrid.svelte -->
-<script>
+<script lang="ts">
     import EmotionButton from "./EmotionButton.svelte";
-    export let emotions;
-    export let selectedEmotions;
-    export let selectEmotion;
+    export let emotions: string[];
+    export let selectedEmotions: string[];
+    export let selectEmotion: (emotion: string) => void;
 </script>
 
 <div class="grid">

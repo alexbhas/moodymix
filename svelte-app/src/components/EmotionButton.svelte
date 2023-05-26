@@ -1,10 +1,10 @@
-<script>
-    export let emotion;
-    export let selectedEmotions;
-    export let selectEmotion;
+<script lang="ts">
+    export let emotion: string;
+    export let selectedEmotions: string[];
+    export let selectEmotion: (emotion: string) => void;
 
     // Colors for each emotion
-    const colorMap = {
+    const colorMap: { [key: string]: string[] } = {
         Happiness: ["#FCF81D", "#EAE61B"],
         Relief: ["#F7F591", "#E2E085"],
         Awe: ["#FF7B25", "#ED7222"],
@@ -35,7 +35,7 @@
     $: selectedColor = colorMap[emotion][1];
 
     // Set font size based on window and text size
-    function getFontSize(emotion) {
+    function getFontSize(emotion: string): string {
         return window.innerWidth <= 600 && emotion.length > 7
             ? "0.8em"
             : emotion.length > 9

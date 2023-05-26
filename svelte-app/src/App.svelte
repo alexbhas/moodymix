@@ -1,8 +1,8 @@
-<script>
+<script lang="ts">
 	import EmotionGrid from "./components/EmotionGrid.svelte";
 
 	// Emotions
-	let emotions = [
+	let emotions: string[] = [
 		"Happiness",
 		"Relief",
 		"Awe",
@@ -29,14 +29,14 @@
 		"Melancholy",
 		"Sadness",
 	];
-	let selectedEmotions = [];
-	let genre = "poppunk"; // Default genre (for now)
-	let songs = [];
+	let selectedEmotions: string[] = [];
+	let genre: string = "poppunk"; // Default genre (for now)
+	let songs: any[] = [];
 
-	let isLoading = false;
+	let isLoading: boolean = false;
 
 	// Request songs based on the emotions
-	async function fetchSongs() {
+	async function fetchSongs(): Promise<void> {
 		isLoading = true;
 		const response = await fetch("/songs", {
 			method: "POST",
@@ -53,7 +53,7 @@
 	}
 
 	// Selecting an emotion in the grid, update the list
-	function selectEmotion(emotion) {
+	function selectEmotion(emotion: string): void {
 		const index = selectedEmotions.indexOf(emotion);
 		if (index === -1) {
 			selectedEmotions = [...selectedEmotions, emotion];
@@ -86,7 +86,7 @@
 					width="100%"
 					height="152"
 					frameBorder="0"
-					allowfullscreen=""
+					allowfullscreen
 					allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
 					loading="lazy"
 				/>
